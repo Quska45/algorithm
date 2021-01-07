@@ -16,10 +16,9 @@
 
 var index;
 var temp;
-var arr = [1, 10, 5, 8, 7, 6, 4, 3, 2, 9, 56,34,75,45,36];
+var arr = [1, 10, 5, 8, 7, 6, 4, 3, 2, 9];
 
 for(var i=0; i<arr.length; i++){
-    console.log(1)
     for(var j=arr.length; j>=0; j--){
         if(arr[j] > arr[j+1]){
             temp = arr[j];
