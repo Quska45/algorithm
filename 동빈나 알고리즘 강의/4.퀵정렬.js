@@ -22,19 +22,40 @@
 */
 
 var arr = [ 1, 10, 5, 8, 7, 6, 4, 3, 2, 9 ];
-
+console.log(123);
 function quickSort( data, start, end ) {
     if( start >= end ) { //원소가 1개인 경우
         return;
     }
 
-    var key = start;
+    var key = start; //첫 번째 값
     var i = start + 1; //배열의 앞에서 부터 인덱스를 의미한다.
     var j = end; //배열의 뒤에서 부터 인덱스를 의미한다.
+    var temp;
 
     while( i <= j ){ //엇갈릴 때까지 반복
-        while( data[ i ]  ){
-            
+        while( data[ i ] <= data[ key ] ){ //키 값보다 큰 값을 만날때
+            i++;
         }
+        while( data[j] >= data[key] && j > start ){ //키 값보다 작은 값을 만날때 까지
+            j--;
+        } 
+        if(i > j){ //엇갈리는 경우
+            temp = data[ j ];
+            data[ j ] = data[ key ];
+            data[ key ] = temp;
+        } else {
+            temp = data[ j ];
+            data[ j ] = data[ i ];
+            data[ i ] = temp;
+
+        }
+
     }
+    // 데이터가 엇갈려 빠져나온 경우 왼쪽 오른쪽은 다시 퀵정렬 수행
+    quickSort( data, start, j-1 );
+    quickSort( data, j+1, end );
 }
+
+quickSort(arr, 0, arr.length-1);
+console.log(arr);
