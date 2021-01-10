@@ -28,7 +28,7 @@ function quickSort( data, start, end ) {
         return;
     }
 
-    var key = start; //첫 번째 값
+    var key = start; //첫 번째 값(기준값)
     var i = start + 1; //배열의 앞에서 부터 인덱스를 의미한다.
     var j = end; //배열의 뒤에서 부터 인덱스를 의미한다.
     var temp;
