@@ -19,12 +19,13 @@ var temp;
 for( var i=0; i<arr.length; i++ ){
     var j = i;
     while(arr[j-1] > arr[j]){
-        console.log(j)
+        //console.log(j)
         temp = arr[j];
         arr[j] = arr[j-1];
         arr[j-1] = temp;
         j--;
     }
+    console.log(j);
 }
 
 console.log(arr);
