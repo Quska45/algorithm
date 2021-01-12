@@ -5,14 +5,14 @@
     - 하나씩 부터 시작해서 묶어나가 면서 한다.
     - 정렬 된 상태 인 것들을 합쳐서 다시 정렬 시켜나가면서 최종 정렬을 만든다.
     - 엔로그엔을 보장한다는 점에서 좋은 알고리즘이다.
+    - 반복적으로 쪼개고 그 다음에 합친다.
 */
 var mergeSort = function( array ){
     if( array.length < 2 ) return array; //원소가 하나일 떄는 그대로 내보냅니다.
     var pivot = Math.floor( array.length / 2 ); //대략 반으로 쪼개는 코드
     var left = array.slice( 0, pivot ); 
     var right = array.slice( pivot, array.length );
-    console.log(pivot)
-    return mergeSort( mergeSort(left), mergeSort(right) ); //재귀적으로 쪼개고 합칩니다.
+    return merge( mergeSort(left), mergeSort(right) ); //재귀적으로 쪼개고 합칩니다.
 }
 
 function merge( left, right ){
