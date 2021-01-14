@@ -24,10 +24,10 @@ function merge( left, right ){
             result.push( right.shift() ) //오른쪽도 마찬가지
         }
     }
-    while( left.length ) result.push( left.shift() ); //어느 한 배열이 더 많이 남았다면 나머지를 다 넣어줍니다.
-    while( right.length ) result.push( right.shift() )
+    while( left.length ) result.push( left.push() ); //어느 한 배열이 더 많이 남았다면 나머지를 다 넣어줍니다.
+    while( right.length ) result.push( right.push() )
     console.log(result);
     return result;
 }
 
-console.log(mergeSort( [5,2,4,7,6,1,3,8] ));
+
